@@ -76,12 +76,12 @@ def _get_ratios(password_length: int) -> Tuple[int, int, int]:
     """Get ratios of each character type."""
 
     # Half of the password length is for letters :
-    letters = int(password_length / 2)
+    letters = password_length // 2
 
     # The other half is distributed between numbers and special characters :
     numbers_and_special_characters = password_length - letters
 
-    if numbers_and_special_characters > int(password_length / 4):
+    if numbers_and_special_characters > password_length // 4:
         numbers = random.randint(1, numbers_and_special_characters // 2)
         special_characters = numbers_and_special_characters - numbers
     else:
